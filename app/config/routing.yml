@@ -1,2 +1,5 @@
 app:
     resource: "@AppBundle/Controller/"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

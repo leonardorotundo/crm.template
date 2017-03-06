@@ -11,15 +11,24 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
  * Description of AppController
- *
- * @author bairesdev02
+ * @author Leonardo Rotundo <leonardorotundo@gmail.com>
  */
 class AppController extends Controller {
     /**
-     * @Route("/test")
+     * @Route("/", name="index")
+     */
+    public function indexController(){
+        $user = $this->getUser();
+        if(is_null($user)){
+            return $this->redirectToRoute("fos_user_security_login");
+        }  
+        
+        return $this->redirectToRoute("show");
+    }
+    /**
+     * @Route("/dashboard", name="show")
      */
     public function showController(){
-        $data = array("response"=>"1");
-        return new \Symfony\Component\HttpFoundation\JsonResponse($data);
+        
     }
 }
