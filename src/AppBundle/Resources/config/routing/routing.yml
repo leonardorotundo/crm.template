@@ -1,4 +1,8 @@
 app_index: 
         path: /
         defaults: { _controller: AppBundle:App:index }
+
+app_dashboard:
+    path: /dashboard
+    defaults: { _controller: AppBundle:App:dashboard }
     

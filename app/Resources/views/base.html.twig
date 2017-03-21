@@ -128,7 +128,7 @@
 					displayLoading('Checking credentials...');
                                         //var url = 'http://localhost/symfony-rest-edition/web/app_dev.php/login';
                                         var url = '{{path("fos_user_security_check")}}';
-                                        var index = '{{path("app_app_showcontroller")}}';
+                                        var index = '{{path("app_index")}}';
 					
 					//  This is where you may do your AJAX call, for instance:
 					  $.ajax(url, {type: "POST",

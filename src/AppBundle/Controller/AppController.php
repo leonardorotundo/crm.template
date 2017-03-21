@@ -14,13 +14,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class AppController extends Controller {
     
-    public function indexController(){
+    public function indexAction(){
         $user = $this->getUser();
         if(is_null($user)){
             return $this->redirectToRoute("fos_user_security_login");
         }
         
-//        return $this->redirectToRoute("show");
+        return $this->redirectToRoute("app_dashboard");
+    }
+    
+    public function dashboardAction(){
+        return $this->render('AppBundle::dashboard.html.twig',['name'=>'leo']);
     }
     
 }
