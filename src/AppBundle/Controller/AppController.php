@@ -24,7 +24,7 @@ class AppController extends Controller {
     }
     
     public function dashboardAction(){
-        return $this->render('AppBundle::dashboard.html.twig',['name'=>'leo']);
+        return $this->render('AppBundle::dashboard.html.twig');
     }
     
 }
