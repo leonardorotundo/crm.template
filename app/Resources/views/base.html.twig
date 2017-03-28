@@ -129,7 +129,7 @@
 					// Show progress
 					displayLoading('Checking credentials...');
                                         //var url = 'http://localhost/symfony-rest-edition/web/app_dev.php/login';
-                                        var url = '{{path("fos_user_security_check")}}';
+                                        var url = '{{ path("fos_user_security_check") }}';
                                         var index = '{{path("app_index")}}';
 					
 					//  This is where you may do your AJAX call, for instance:
@@ -146,10 +146,11 @@
                                                                 document.location.href = index;
                                                             }, 2000);
 					  		},
-					  		error: function()
+					  		error: function(response)
 					  		{
-					  			formWrapper.clearMessages();
-					  			displayError('Error while contacting server, please try again');
+					  			var data = jQuery.parseJSON(response.responseText);
+                                                                formWrapper.clearMessages();
+                                                                displayError(data.message);
 					  		}
 					  });
 				}
